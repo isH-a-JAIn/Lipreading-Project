@@ -1,47 +1,60 @@
 # Lipreading-Project- GRU Model for Video-Based Speech Recognition 
 
-Overview
-This project explores lipreading using deep learning, specifically focusing on predicting sentences from silent video footage of speakers. Unlike traditional approaches that focus on individual word classification, this work aims to capture temporal and contextual patterns across sequences of frames to decode entire sentences.
+# Lipreading with GRU – Video-Based Sentence Prediction  
+*August 2024 – Present*
 
-I contributed to this project by developing and refining GRU models trained on the GRID corpus. The work builds on existing research and enhances sentence-level accuracy using temporal feature extraction.
+## **Overview**  
+This project explores **lipreading using deep learning**, specifically focusing on *predicting full sentences* from silent video footage of speakers. Unlike traditional approaches that focus on individual word classification, this work captures *temporal and contextual patterns* across sequences of frames to decode entire sentences.
 
-Project Contents
+I contributed to this project by developing and refining **GRU models** trained on the **GRID corpus**, building on prior work to enhance sentence-level prediction through temporal feature extraction.
+
+---
+
+## **Project Contents**  
 Due to GPU constraints on free-tier Google Colab, training was split across multiple notebook versions and run on different accounts.
 
-master/sandbox_GRU_8.ipynb: Final notebook with trained model and results, including sample predictions. Achieved a minimum validation loss of 3.42.
+- **`master/sandbox_GRU_8.ipynb`**  
+  Final notebook containing the trained GRU model, evaluation results, and a few sample predictions.  
+  *Achieved minimum validation loss of 3.42.*
 
-notebooks/: Contains earlier training notebooks (gru_model_v1.ipynb to gru_model_7.ipynb) showing the model development process, preprocessing steps, and intermediate tuning efforts.
+- **`notebooks/`**  
+  Earlier training notebooks (`gru_model_v1.ipynb` to `gru_model_7.ipynb`) showing:
+  - Model development progression  
+  - Preprocessing steps  
+  - Intermediate experiments and tuning efforts  
 
-Dataset
-GRID Corpus
+---
 
-Over 28 hours of audiovisual recordings
+## **Dataset – GRID Corpus**  
+- Over *28 hours* of audiovisual recordings  
+- Structured *six-word sentences* spoken by multiple speakers  
+- Includes aligned video frames and sentence labels  
 
-Structured six-word sentences spoken by multiple speakers
+The dataset was preprocessed into image sequences and sentence-level labels for supervised learning.  
+*Only the visual modality (video) was used for training.*
 
-Dataset includes aligned video frames and sentence labels
+---
 
-The dataset was preprocessed into image sequences and sentence-level labels for supervised learning. Only the visual modality (video) was used in training.
+## **Tools & Frameworks**  
+- **Python 3.9+**  
+- **TensorFlow / Keras**  
+- **OpenCV** – for video frame extraction  
+- **Google Colab** – used for GPU training (across multiple accounts to bypass time limits)  
 
-Tools & Frameworks
-Python 3.9+
+---
 
-TensorFlow / Keras
+## **Model Summary – GRU**  
+The GRU model architecture consists of:
 
-OpenCV for video frame extraction
+- `TimeDistributed` **CNN layers** to extract spatial features from each frame  
+- **Bidirectional GRU layers** to capture sequential and contextual relationships  
+- **Dense + Softmax layer** for final sentence classification  
 
-Google Colab (multiple accounts used to work around GPU time limits)
+The final model achieved a **validation loss of 3.42**.  
+Refer to the `sandbox_GRU_8.ipynb` notebook for sample predictions and evaluation details.
 
+---
 
-Model Summary – GRU
-The model architecture includes:
-
-TimeDistributed CNN layers for extracting spatial features from individual frames
-
-Dense + Softmax layer for classifying entire sentences
-
-The final GRU model reached a validation loss of 3.42, and the sandbox_GRU_8.ipynb notebook includes examples of predictions.
-
-
-Acknowledgments
-Thanks to the team for Bi-LSTM work and shared resources. Special thanks to Google Colab for enabling GPU-based training throughout this project.
+## **Acknowledgments**  
+Grateful to the team for the Bi-LSTM implementation and shared code resources.  
+Special thanks to **Google Colab** for enabling GPU-based training throughout the project.
