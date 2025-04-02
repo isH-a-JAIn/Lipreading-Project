@@ -1,7 +1,5 @@
-# Lipreading-Project- GRU Model for Video-Based Speech Recognition 
+# Lipreading-Project- Video-Based Speech Recognition 
 
-# Lipreading with GRU – Video-Based Sentence Prediction  
-*August 2024 – Present*
 
 ## **Overview**  
 This project explores **lipreading using deep learning**, specifically focusing on *predicting full sentences* from silent video footage of speakers. Unlike traditional approaches that focus on individual word classification, this work captures *temporal and contextual patterns* across sequences of frames to decode entire sentences.
